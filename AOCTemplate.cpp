@@ -122,7 +122,8 @@ vector<string> Split(string &s, char delim)
     {
         if (c == delim)
         {
-            res.pb(cur);
+            if (!cur.empty())
+                res.pb(cur);
             cur.clear();
         }
         else
@@ -130,7 +131,8 @@ vector<string> Split(string &s, char delim)
             cur.push_back(c);
         }
     }
-    res.pb(cur);
+    if (!cur.empty())
+        res.pb(cur);
     return res;
 }
 
@@ -425,10 +427,12 @@ bool IsInside(int r, int c, int R, int C)
 
 void Part1(vector<string> &lines)
 {
+    cout << "Part 1: ";
 }
 
 void Part2(vector<string> &lines)
 {
+    cout << "Part 2: ";
 }
 
 int32_t main()
